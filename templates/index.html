@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/validate_account" method="POST",  style="margin: 5px auto">
+    <Label>Account Number: </Label>
+    <p><input type="number" name="account"></p>
+      <Label>PIN: </Label>
+    <p><input type="number" name="pin" pattern="[0-9]{4}" title="4 digit number: e.g. 1234" required></p>
+<button type="submit">Submit</button>
+</form>
+{% endblock %}

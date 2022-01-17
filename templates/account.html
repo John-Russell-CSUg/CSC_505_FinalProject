@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Create Account {% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<p>Viewing Account: {{account}}</p>
+<p>Current Balance: {{balance}} </p>
+<form class="form-group" action='/alter_balance' method="POST" name="{{account}}">
+    <label>Withdrawal Amount:</label>
+    <p><input type="number" name="withdraw_amount"></p>
+
+     <label>Deposit Amount:</label>
+    <p><input type="number" name="deposit_amount"></p>
+</form>
+
+{% endblock %}
